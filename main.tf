@@ -23,11 +23,11 @@ variable "test2" {
 }
 variable "secret1" {
    type = string
-   sensitive = true
+   sensitive = false
 }
 variable "secret2" {
    type = string
-   sensitive = true
+   sensitive = false
 }
 
 output "hello_world" {
@@ -36,5 +36,5 @@ output "hello_world" {
 
 output "cm_and_secret" {
   value = "test1: ${var.test1} | test2: ${var.test2} | secret1: ${var.secret1} | secret2: ${var.secret2}" 
-  sensitive = true
+  sensitive = false
 }
