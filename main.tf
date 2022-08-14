@@ -36,4 +36,5 @@ output "hello_world" {
 
 output "cm_and_secret" {
   value = "test1: ${var.test1} | test2: ${var.test2} | secret1: ${var.secret1} | secret2: ${var.secret2}" 
+  sensitive = true
 }
