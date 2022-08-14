@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "Frontenac-Technology-Services"
+    organization = "ComputersThatWork"
 
     workspaces {
       name = "helloworld"
