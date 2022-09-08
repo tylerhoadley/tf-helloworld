@@ -1,40 +1,12 @@
+
 terraform {
-  cloud {
-    organization = "ComputersThatWork"
-
-    workspaces {
-      name = "helloworld"
-    }
-  }
+  # This module is now only being tested with Terraform 0.13.x. However, to make upgrading easier, we are setting
+  # 0.12.26 as the minimum version, as that version added support for required_providers with source URLs, making it
+  # forwards compatible with 0.13.x code.
+  required_version = ">= 0.12.26"
 }
 
-variable "subject" {
-   type = string
-   default = "World"
-   description = "Subject to hello"
-}
-
-
-variable "test1" {
-   type = string
-}
-variable "test2" {
-   type = string
-}
-variable "secret1" {
-   type = string
-   sensitive = false
-}
-variable "secret2" {
-   type = string
-   sensitive = false
-}
-
+# website::tag::1:: The simplest possible Terraform module: it just outputs "Hello, World!"
 output "hello_world" {
-  value = "Hello, ${var.subject}!"
-}
-
-output "cm_and_secret" {
-  value = "test1: ${var.test1} | test2: ${var.test2} | secret1: ${var.secret1} | secret2: ${var.secret2}" 
-  sensitive = false
+  value = "Hello, World!"
 }
